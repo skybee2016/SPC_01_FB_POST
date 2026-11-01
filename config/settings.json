@@ -26,7 +26,7 @@
   },
   "models": {
     "text": "gpt-4o-mini",
-    "image": "dall-e-3",
+    "image": "gpt-image-1-mini",
     "image_size": "1024x1024"
   },
   "content": {
