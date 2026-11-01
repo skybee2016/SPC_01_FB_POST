@@ -1,0 +1,47 @@
+{
+  "brand": {
+    "name": "Senior Peace Care",
+    "website": "https://seniorpeacecare.com/",
+    "tfn": "REPLACE_WITH_TOLL_FREE_NUMBER",
+    "tone": "warm, reassuring, trustworthy, respectful of seniors and their families",
+    "audience": "adult children and family caregivers of seniors in the USA",
+    "services": [
+      "in-home concierge coordination",
+      "medication and appointment reminders",
+      "transportation to doctor visits",
+      "companionship and daily check-ins",
+      "family updates and peace of mind",
+      "care plan coordination with trusted providers"
+    ]
+  },
+  "page": {
+    "facebook_page_id": "REPLACE_WITH_PAGE_ID",
+    "page_url": "REPLACE_WITH_REAL_PAGE_URL"
+  },
+  "schedule": {
+    "posts_per_day": 3,
+    "interval_hours": 8,
+    "utc_cron": "0 0,8,16 * * *",
+    "note": "00:00, 08:00, 16:00 UTC = 05:30, 13:30, 21:30 IST"
+  },
+  "models": {
+    "text": "gpt-4.1-mini",
+    "image": "gpt-image-1",
+    "image_size": "1024x1024"
+  },
+  "content": {
+    "post_types": ["caregiver_tip", "service_spotlight", "testimonial_style_story", "faq", "seasonal_safety", "call_to_action"],
+    "cta_options": [
+      "Call us today at {tfn} to talk with a care specialist.",
+      "Visit {website} to learn more or sign up.",
+      "Like and follow this page for daily caregiver tips.",
+      "Share this with a family member who needs support. Call {tfn}."
+    ],
+    "avoid": [
+      "medical claims or guaranteed outcomes",
+      "fake testimonials or invented names",
+      "fear-based or guilt-based language",
+      "pricing or insurance promises not confirmed by the business"
+    ]
+  }
+}
