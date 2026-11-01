@@ -2,7 +2,7 @@
   "brand": {
     "name": "Senior Peace Care",
     "website": "https://seniorpeacecare.com/",
-    "tfn": "REPLACE_WITH_TOLL_FREE_NUMBER",
+    "tfn": "(800) 214-3554",
     "tone": "warm, reassuring, trustworthy, respectful of seniors and their families",
     "audience": "adult children and family caregivers of seniors in the USA",
     "services": [
@@ -15,7 +15,7 @@
     ]
   },
   "page": {
-    "facebook_page_id": "REPLACE_WITH_PAGE_ID",
+    "facebook_page_id": "1289061994300527",
     "page_url": "REPLACE_WITH_REAL_PAGE_URL"
   },
   "schedule": {
@@ -30,7 +30,14 @@
     "image_size": "1024x1024"
   },
   "content": {
-    "post_types": ["caregiver_tip", "service_spotlight", "testimonial_style_story", "faq", "seasonal_safety", "call_to_action"],
+    "post_types": [
+      "caregiver_tip",
+      "service_spotlight",
+      "testimonial_style_story",
+      "faq",
+      "seasonal_safety",
+      "call_to_action"
+    ],
     "cta_options": [
       "Call us today at {tfn} to talk with a care specialist.",
       "Visit {website} to learn more or sign up.",
