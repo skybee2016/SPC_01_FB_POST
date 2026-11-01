@@ -92,9 +92,15 @@ def main():
     out_dir = ROOT / "posts" / stamp
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    generate_image(client, copy["image_prompt"], out_dir / "image.png")
+    try:
+        generate_image(client, copy["image_prompt"], out_dir / "image.png")
+        has_image = True
+    except Exception as exc:  # image model unavailable on account: fall back to text-only post
+        print(f"Image generation failed, posting text only: {exc}")
+        has_image = False
 
-    record = {"id": stamp, "post_type": post_type, "created_utc": stamp, "published": False, **copy}
+    record = {"id": stamp, "post_type": post_type, "created_utc": stamp, "published": False,
+              "has_image": has_image, **copy}
     (out_dir / "post.json").write_text(json.dumps(record, indent=2))
     print(json.dumps({"folder": str(out_dir.relative_to(ROOT)), "headline": copy["headline"]}))
     return 0

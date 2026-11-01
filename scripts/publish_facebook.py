@@ -34,11 +34,18 @@ def publish(folder):
     if meta.get("hashtags"):
         message += "\n\n" + " ".join("#" + h.lstrip("#") for h in meta["hashtags"])
 
-    with open(folder / "image.png", "rb") as img:
+    if meta.get("has_image", True) and (folder / "image.png").exists():
+        with open(folder / "image.png", "rb") as img:
+            resp = requests.post(
+                f"{GRAPH}/{page_id}/photos",
+                data={"message": message, "access_token": token, "published": "true"},
+                files={"source": img},
+                timeout=120,
+            )
+    else:
         resp = requests.post(
-            f"{GRAPH}/{page_id}/photos",
-            data={"message": message, "access_token": token, "published": "true"},
-            files={"source": img},
+            f"{GRAPH}/{page_id}/feed",
+            data={"message": message, "access_token": token},
             timeout=120,
         )
     body = resp.json()
