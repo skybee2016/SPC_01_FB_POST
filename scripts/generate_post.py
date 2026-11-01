@@ -73,7 +73,12 @@ def generate_image(client, image_prompt, out_path):
         prompt=image_prompt + " Warm, uplifting, no text, no logos.",
         size=SETTINGS["models"]["image_size"],
     )
-    out_path.write_bytes(base64.b64decode(result.data[0].b64_json))
+    item = result.data[0]
+    if getattr(item, "b64_json", None):
+        out_path.write_bytes(base64.b64decode(item.b64_json))
+    else:
+        import requests
+        out_path.write_bytes(requests.get(item.url, timeout=120).content)
 
 
 def main():
