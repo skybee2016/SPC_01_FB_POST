@@ -25,7 +25,7 @@
     "note": "00:00, 08:00, 16:00 UTC = 05:30, 13:30, 21:30 IST"
   },
   "models": {
-    "text": "gpt-4.1-mini",
+    "text": "gpt-4o-mini",
     "image": "gpt-image-1",
     "image_size": "1024x1024"
   },
